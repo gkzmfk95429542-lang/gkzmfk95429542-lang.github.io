@@ -3,60 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Korean Pharmacy Acne Guide | K-Beauty Picks</title>
-<meta name="description" content="Honest reviews of Korean pharmacy acne products. Find the best 약국템 for spots, scars, and acne-prone skin.">
+<title>Glow Vault | Korean Skincare You Can Trust</title>
+<meta name="description" content="Honest Korean skincare picks — pharmacy gems, trending K-beauty, and expert guides for every skin type.">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Segoe UI', sans-serif; background: #fafafa; color: #333; }
-  
-  header {
-    background: linear-gradient(135deg, #ff6b9d, #c44569);
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-  }
-  header h1 { font-size: 2.2em; margin-bottom: 10px; }
-  header p { font-size: 1.1em; opacity: 0.9; }
-  
-  nav {
+
+  /* HEADER */
+  .top-bar {
     background: #fff;
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
+  .logo {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #c44569;
+    letter-spacing: -0.5px;
+  }
+  .logo span { color: #f8a5c2; }
   nav a {
     text-decoration: none;
-    color: #c44569;
-    font-weight: 600;
-    font-size: 0.95em;
+    color: #555;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.2s;
   }
-  nav a:hover { text-decoration: underline; }
+  nav a:hover { color: #c44569; }
 
-  .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-
-  .section-title {
-    font-size: 1.6em;
-    color: #c44569;
+  /* HERO BANNER */
+  .hero {
+    width: 100%;
+    height: 420px;
+    background: linear-gradient(120deg, #ffeef5 0%, #fff5f0 50%, #f0f8ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+  }
+  .hero-content h1 {
+    font-size: 3em;
+    font-weight: 900;
+    color: #2d2d2d;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+  .hero-content h1 span { color: #c44569; }
+  .hero-content p {
+    font-size: 1.15em;
+    color: #666;
     margin-bottom: 25px;
-    border-left: 5px solid #ff6b9d;
-    padding-left: 15px;
+  }
+  .hero-btn {
+    display: inline-block;
+    background: #c44569;
+    color: white;
+    padding: 14px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1em;
+    transition: background 0.2s;
+  }
+  .hero-btn:hover { background: #a33558; }
+
+  /* CATEGORIES */
+  .container { max-width: 1000px; margin: 0 auto; padding: 50px 20px; }
+
+  .section-label {
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #c44569;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 1.9em;
+    font-weight: 800;
+    color: #2d2d2d;
+    margin-bottom: 40px;
   }
 
-  .product-grid {
+  .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    margin-bottom: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
   }
-
-  .product-card {
+  .category-card {
     background: white;
     border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: #333;
+  }
+  .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(196,69,105,0.15);
+  }
+  .category-icon { font-size: 2.2em; margin-bottom: 12px; }
+  .category-card h3 { font-size: 1em; font-weight: 700; margin-bottom: 6px; }
+  .category-card p { font-size: 0.8em; color: #999; }
+
+  /* FEATURED PRODUCTS */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+  }
+  .product-card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
     transition: transform 0.2s;
   }
   .product-card:hover { transform: translateY(-4px); }
@@ -65,229 +153,279 @@
     display: inline-block;
     padding: 4px 12px;
     border-radius: 20px;
-    font-size: 0.75em;
+    font-size: 0.72em;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
-  .badge-best { background: #fff0f5; color: #c44569; }
-  .badge-scar { background: #f0f8ff; color: #2c7be5; }
-  .badge-value { background: #f0fff4; color: #27ae60; }
+  .badge-pink { background: #fff0f5; color: #c44569; }
+  .badge-blue { background: #f0f5ff; color: #3867d6; }
+  .badge-green { background: #f0fff4; color: #20bf6b; }
+  .badge-gold { background: #fffbf0; color: #f9a825; }
 
-  .product-card h3 { font-size: 1.1em; margin-bottom: 8px; }
-  .product-card .korean { color: #999; font-size: 0.85em; margin-bottom: 10px; }
-  .product-card p { font-size: 0.9em; line-height: 1.6; color: #555; margin-bottom: 15px; }
-
-  .price { font-weight: 700; color: #c44569; margin-bottom: 15px; font-size: 0.95em; }
+  .product-card h3 { font-size: 1.05em; font-weight: 700; margin-bottom: 5px; }
+  .product-card .korean { color: #bbb; font-size: 0.82em; margin-bottom: 10px; }
+  .product-card p { font-size: 0.88em; line-height: 1.7; color: #666; margin-bottom: 15px; }
+  .price { font-weight: 800; color: #c44569; margin-bottom: 16px; }
 
   .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 9px 18px;
     border-radius: 25px;
     text-decoration: none;
-    font-size: 0.88em;
-    font-weight: 600;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    transition: opacity 0.2s;
+    font-size: 0.82em;
+    font-weight: 700;
+    margin-right: 7px;
+    margin-bottom: 7px;
   }
-  .btn:hover { opacity: 0.85; }
   .btn-amazon { background: #ff9900; color: white; }
   .btn-yesstyle { background: #222; color: white; }
   .btn-korean { background: #e74c3c; color: white; }
 
-  .disclosure {
-    background: #fff9e6;
-    border: 1px solid #ffd700;
-    border-radius: 8px;
-    padding: 15px 20px;
-    font-size: 0.82em;
-    color: #666;
-    margin-bottom: 40px;
-    line-height: 1.6;
+  /* REDDIT BANNER */
+  .reddit-banner {
+    background: linear-gradient(135deg, #ff6b35, #f7431e);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    margin-bottom: 60px;
+  }
+  .reddit-banner h2 { font-size: 1.6em; margin-bottom: 10px; }
+  .reddit-banner p { opacity: 0.9; margin-bottom: 20px; font-size: 0.95em; }
+  .btn-reddit {
+    background: white;
+    color: #f7431e;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.95em;
   }
 
-  .intro-box {
+  /* WHERE TO BUY */
+  .store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+  }
+  .store-card {
     background: white;
     border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    margin-bottom: 40px;
-    line-height: 1.8;
-  }
-  .intro-box h2 { color: #c44569; margin-bottom: 15px; }
-
-  footer {
-    background: #222;
-    color: #aaa;
+    padding: 28px;
     text-align: center;
-    padding: 30px 20px;
-    font-size: 0.85em;
-    line-height: 1.8;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
   }
-  footer a { color: #ff9db5; text-decoration: none; }
+  .store-card h3 { font-size: 1.1em; margin-bottom: 10px; }
+  .store-card p { font-size: 0.85em; color: #777; margin-bottom: 18px; line-height: 1.6; }
+
+  /* DISCLOSURE */
+  .disclosure {
+    background: #fff9e6;
+    border: 1px solid #ffe082;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 50px;
+    line-height: 1.7;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #1a1a2e;
+    color: #888;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.85em;
+    line-height: 2;
+  }
+  footer .footer-logo {
+    font-size: 1.4em;
+    font-weight: 800;
+    color: #f8a5c2;
+    margin-bottom: 10px;
+  }
+  footer a { color: #f8a5c2; text-decoration: none; }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>🌸 Korean Pharmacy Acne Guide</h1>
-  <p>Tried-and-tested 약국템 picks for clearer skin</p>
-</header>
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="logo">Glow<span>Vault</span></div>
+  <nav>
+    <a href="#featured">Products</a>
+    <a href="#categories">Categories</a>
+    <a href="#where">Where to Buy</a>
+    <a href="#reddit">Community</a>
+  </nav>
+</div>
 
-<nav>
-  <a href="#spot">Spot Treatment</a>
-  <a href="#scar">Scar Care</a>
-  <a href="#value">Budget Picks</a>
-  <a href="#where">Where to Buy</a>
-</nav>
+<!-- HERO BANNER -->
+<div class="hero">
+  <!-- 이미지 준비되면 아래 주석 해제하고 파일명 입력 -->
+  <!-- <img src="banner.jpg" class="hero-bg" alt="Glow Vault Banner"> -->
+  <div class="hero-content">
+    <h1>Your Korean Skincare<br><span>Vault.</span></h1>
+    <p>Honest picks. Real results. Straight from Korea.</p>
+    <a href="#featured" class="hero-btn">Explore Products</a>
+  </div>
+</div>
 
 <div class="container">
 
+  <!-- CATEGORIES -->
+  <div id="categories">
+    <p class="section-label">Browse by Skin Concern</p>
+    <h2 class="section-title">What's your skin goal?</h2>
+    <div class="category-grid">
+      <a href="#acne" class="category-card">
+        <div class="category-icon">🔴</div>
+        <h3>Acne & Breakouts</h3>
+        <p>Pharmacy-grade treatments</p>
+      </a>
+      <a href="#scar" class="category-card">
+        <div class="category-icon">✨</div>
+        <h3>Scar & Marks</h3>
+        <p>Fade post-acne spots</p>
+      </a>
+      <a href="#moisture" class="category-card">
+        <div class="category-icon">💧</div>
+        <h3>Hydration</h3>
+        <p>Dry & dehydrated skin</p>
+      </a>
+      <a href="#sun" class="category-card">
+        <div class="category-icon">☀️</div>
+        <h3>Sunscreen</h3>
+        <p>Korea's best SPF picks</p>
+      </a>
+      <a href="#cleanse" class="category-card">
+        <div class="category-icon">🫧</div>
+        <h3>Cleansing</h3>
+        <p>Double cleanse routine</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- DISCLOSURE -->
   <div class="disclosure">
-    ⚠️ <strong>Affiliate Disclosure:</strong> This page contains affiliate links. If you purchase through these links, I may earn a small commission at no extra cost to you. All product opinions are based on real reviews and research.
+    ⚠️ <strong>Affiliate Disclosure:</strong> This page contains affiliate links. If you purchase through these links, I may earn a small commission at no extra cost to you. All recommendations are based on real research and community reviews.
   </div>
 
-  <div class="intro-box">
-    <h2>Why Korean Pharmacy Acne Products?</h2>
-    <p>Korean pharmacies stock dermatologist-grade acne treatments that are often unavailable at regular beauty stores. These products — known as <strong>약국템 (yakguk-tem)</strong> — contain active ingredients like antibiotics, retinoids, and scar-fading compounds at concentrations that actually work. Best part? Most cost under $10 in Korea.</p>
+  <!-- FEATURED PRODUCTS -->
+  <div id="featured">
+    <p class="section-label">Community Favorites</p>
+    <h2 class="section-title">Most Loved Korean Picks</h2>
+    <div class="product-grid">
+
+      <div class="product-card" id="acne">
+        <span class="badge badge-pink">⭐ Best for Acne</span>
+        <h3>Acnon Cream</h3>
+        <div class="korean">애크논크림</div>
+        <p>Cult-favorite Korean pharmacy acne cream. Triclosan + allantoin targets active breakouts while soothing redness. Works fast on inflamed pimples.</p>
+        <div class="price">~$8–12 USD</div>
+        <a href="https://www.amazon.com/s?k=acnon+cream+korean" class="btn btn-amazon" target="_blank" rel="nofollow">Amazon</a>
+        <a href="https://www.yesstyle.com/en/search.html#text=acnon+cream" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
+      </div>
+
+      <div class="product-card" id="scar">
+        <span class="badge badge-blue">✨ Best for Scars</span>
+        <h3>Noscana Gel</h3>
+        <div class="korean">노스카나겔</div>
+        <p>Contains noscapine + heparin to flatten and fade raised acne scars. Use after healing to prevent scar formation. Korean dermatologist approved.</p>
+        <div class="price">~$15–20 USD</div>
+        <a href="https://www.amazon.com/s?k=noscana+gel+korean" class="btn btn-amazon" target="_blank" rel="nofollow">Amazon</a>
+        <a href="https://www.yesstyle.com/en/search.html#text=noscana+gel" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
+      </div>
+
+      <div class="product-card" id="sun">
+        <span class="badge badge-gold">☀️ Best Sunscreen</span>
+        <h3>Dalba Sunscreen</h3>
+        <div class="korean">달바 선크림</div>
+        <p>Lightweight Korean sunscreen with no white cast. SPF 50+ PA++++. Loved for its silky texture — wears perfectly under makeup. Viral on Korean beauty communities.</p>
+        <div class="price">~$20–25 USD</div>
+        <a href="https://www.yesstyle.com/en/search.html#text=dalba+sunscreen" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
+        <a href="https://www.stylekoreanglobal.com" class="btn btn-korean" target="_blank" rel="nofollow">StyleKorean</a>
+      </div>
+
+      <div class="product-card" id="moisture">
+        <span class="badge badge-green">💧 Best Hydration</span>
+        <h3>Torriden Dive-In Serum</h3>
+        <div class="korean">토리든 다이브인 세럼</div>
+        <p>5-type hyaluronic acid serum loved by Korean beauty YouTubers. Lightweight watery texture, instantly plumps dehydrated skin. Fragrance-free and non-comedogenic.</p>
+        <div class="price">~$18–22 USD</div>
+        <a href="https://www.yesstyle.com/en/search.html#text=torriden+dive+in+serum" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
+        <a href="https://www.stylekoreanglobal.com" class="btn btn-korean" target="_blank" rel="nofollow">StyleKorean</a>
+      </div>
+
+      <div class="product-card" id="cleanse">
+        <span class="badge badge-pink">🫧 Best Cleanser</span>
+        <h3>Senka Perfect Whip</h3>
+        <div class="korean">센카 퍼펙트휩</div>
+        <p>Japan x Korea crossover cult cleanser. Ultra-fine foam that removes impurities without stripping. Recommended by Korean dermatologists for sensitive and acne-prone skin.</p>
+        <div class="price">~$8–12 USD</div>
+        <a href="https://www.amazon.com/s?k=senka+perfect+whip" class="btn btn-amazon" target="_blank" rel="nofollow">Amazon</a>
+        <a href="https://www.yesstyle.com/en/search.html#text=senka+perfect+whip" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
+      </div>
+
+      <div class="product-card">
+        <span class="badge badge-gold">💊 Pharmacy Gem</span>
+        <h3>Esroban Ointment</h3>
+        <div class="korean">에스로반 연고</div>
+        <p>Mupirocin antibiotic ointment for infected acne and open blemishes. One of the most recommended Korean pharmacy picks. Use as a targeted spot treatment only.</p>
+        <div class="price">~$6–10 USD</div>
+        <a href="https://www.amazon.com/s?k=esroban+mupirocin+korean" class="btn btn-amazon" target="_blank" rel="nofollow">Amazon</a>
+        <a href="https://www.yesstyle.com/en/search.html#text=esroban" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
+      </div>
+
+    </div>
   </div>
 
-  <!-- SPOT TREATMENT -->
-  <h2 class="section-title" id="spot">Spot Treatment</h2>
-  <div class="product-grid">
-
-    <div class="product-card">
-      <span class="badge badge-best">⭐ Best Seller</span>
-      <h3>Acnon Cream</h3>
-      <div class="korean">애크논크림</div>
-      <p>A cult-favorite Korean pharmacy acne cream. Contains triclosan and allantoin to target active breakouts while soothing redness. Works fast on inflamed pimples.</p>
-      <div class="price">~$8–12 USD</div>
-      <a href="https://www.amazon.com/s?k=acnon+cream+korean" class="btn btn-amazon" target="_blank" rel="nofollow">Amazon</a>
-      <a href="https://www.yesstyle.com/en/search.html#text=acnon+cream" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
-    </div>
-
-    <div class="product-card">
-      <span class="badge badge-best">🔥 Holy Grail</span>
-      <h3>Dr. Yes Quinol Gel Forte</h3>
-      <div class="korean">닥터 예스키놀젤 포르테</div>
-      <p>Contains quinolone antibiotic ingredient. Highly effective on stubborn cystic acne. Popular on Korean skincare communities (오픈카톡/유튜브). Use as a spot treatment only.</p>
-      <div class="price">~$10–15 USD</div>
-      <a href="https://www.yesstyle.com/en/search.html#text=quinol+gel" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
-      <a href="https://www.stylekoreanglobal.com" class="btn btn-korean" target="_blank" rel="nofollow">StyleKorean</a>
-    </div>
-
-    <div class="product-card">
-      <span class="badge badge-best">💊 Pharmacy Pick</span>
-      <h3>Esroban Ointment</h3>
-      <div class="korean">에스로반 연고</div>
-      <p>Mupirocin-based antibiotic ointment. Korean dermatologists recommend this for infected acne and open wounds. One of the top "인생템" picks in Korean pharmacy acne communities.</p>
-      <div class="price">~$6–10 USD</div>
-      <a href="https://www.amazon.com/s?k=esroban+mupirocin+korean" class="btn btn-amazon" target="_blank" rel="nofollow">Amazon</a>
-      <a href="https://www.yesstyle.com/en/search.html#text=esroban" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
-    </div>
-
-  </div>
-
-  <!-- SCAR CARE -->
-  <h2 class="section-title" id="scar">Scar & Post-Acne Care</h2>
-  <div class="product-grid">
-
-    <div class="product-card">
-      <span class="badge badge-scar">✨ Scar Fading</span>
-      <h3>Noscana Gel</h3>
-      <div class="korean">노스카나겔</div>
-      <p>Contains noscapine and heparin to flatten and fade raised acne scars. Widely used after acne healing to prevent scar formation. Available on Amazon!</p>
-      <div class="price">~$15–20 USD</div>
-      <a href="https://www.amazon.com/s?k=noscana+gel+korean" class="btn btn-amazon" target="_blank" rel="nofollow">Amazon</a>
-      <a href="https://www.yesstyle.com/en/search.html#text=noscana+gel" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
-    </div>
-
-    <div class="product-card">
-      <span class="badge badge-scar">🌿 Soothing</span>
-      <h3>Sevitabi Gel</h3>
-      <div class="korean">세비타비겔</div>
-      <p>Centella asiatica-based gel formula that calms post-acne redness and helps skin barrier recovery. Gentle enough for sensitive skin. Ranked #1 "인생템" by Korean beauty YouTuber 비탐.</p>
-      <div class="price">~$8–12 USD</div>
-      <a href="https://www.yesstyle.com/en/search.html#text=sevitabi" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
-      <a href="https://www.stylekoreanglobal.com" class="btn btn-korean" target="_blank" rel="nofollow">StyleKorean</a>
-    </div>
-
-    <div class="product-card">
-      <span class="badge badge-scar">💧 Hydration + Heal</span>
-      <h3>Calamine Lotion</h3>
-      <div class="korean">칼라민 로션</div>
-      <p>Classic zinc oxide lotion that dries out active acne while soothing irritated skin. A must-have in Korean pharmacy skincare routines for oily and acne-prone skin types.</p>
-      <div class="price">~$5–8 USD</div>
-      <a href="https://www.amazon.com/s?k=calamine+lotion+korean+skincare" class="btn btn-amazon" target="_blank" rel="nofollow">Amazon</a>
-      <a href="https://www.yesstyle.com/en/search.html#text=calamine+lotion" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
-    </div>
-
-  </div>
-
-  <!-- BUDGET PICKS -->
-  <h2 class="section-title" id="value">Budget Picks (Daiso / Under $5)</h2>
-  <div class="product-grid">
-
-    <div class="product-card">
-      <span class="badge badge-value">💚 Daiso Find</span>
-      <h3>Cure Alpha Aloe Pad</h3>
-      <div class="korean">큐어알파 알로에패드</div>
-      <p>Toning pads with BHA + aloe vera. Great for daily exfoliation on acne-prone skin. Originally spotted at Daiso Korea — now available through K-beauty retailers.</p>
-      <div class="price">~$3–6 USD</div>
-      <a href="https://www.yesstyle.com/en/search.html#text=cure+alpha+aloe+pad" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
-    </div>
-
-    <div class="product-card">
-      <span class="badge badge-value">💛 Spot Hero</span>
-      <h3>Hatserin Yellow Spot</h3>
-      <div class="korean">햇서린 노란스팟</div>
-      <p>Ultra-targeted yellow spot cream for overnight treatment. Viral on Korean TikTok and YouTube for its instant drying effect on whiteheads. Daiso price, premium results.</p>
-      <div class="price">~$3–5 USD</div>
-      <a href="https://www.yesstyle.com/en/search.html#text=hatserin+spot" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
-    </div>
-
-    <div class="product-card">
-      <span class="badge badge-value">🔵 Mask Magic</span>
-      <h3>Celderma Azulene Mask</h3>
-      <div class="korean">셀더마 아줄렌 마스크</div>
-      <p>Azulene-infused sheet mask that reduces post-acne redness. Korean aestheticians use azulene post-extraction. This Daiso version makes it accessible for daily soothing.</p>
-      <div class="price">~$1–3 USD</div>
-      <a href="https://www.yesstyle.com/en/search.html#text=azulene+mask+korean" class="btn btn-yesstyle" target="_blank" rel="nofollow">YesStyle</a>
-    </div>
-
+  <!-- REDDIT COMMUNITY -->
+  <div class="reddit-banner" id="reddit">
+    <h2>Join the Community on Reddit</h2>
+    <p>Get weekly Korean skincare picks, honest reviews, and pharmacy finds.<br>Follow us on Reddit → <strong>u/GlowVaultKorea</strong></p>
+    <a href="https://www.reddit.com/user/GlowVaultKorea" class="btn-reddit" target="_blank">Visit Reddit Profile</a>
   </div>
 
   <!-- WHERE TO BUY -->
-  <h2 class="section-title" id="where">Where to Buy Korean Pharmacy Products</h2>
-  <div class="product-grid">
-
-    <div class="product-card">
-      <h3>🛒 Amazon</h3>
-      <p>Best for: Fast shipping (Prime), easy returns. Some Korean pharmacy products are available. Check seller ratings carefully.</p>
-      <a href="https://www.amazon.com/s?k=korean+pharmacy+acne+cream" class="btn btn-amazon" target="_blank" rel="nofollow">Shop Amazon</a>
+  <div id="where">
+    <p class="section-label">Shopping Guide</p>
+    <h2 class="section-title">Where to Buy Korean Skincare</h2>
+    <div class="store-grid">
+      <div class="store-card">
+        <h3>🛒 Amazon</h3>
+        <p>Fast Prime shipping. Best for products with US availability. Check seller ratings for authentic Korean items.</p>
+        <a href="https://www.amazon.com/s?k=korean+skincare" class="btn btn-amazon" target="_blank" rel="nofollow">Shop Amazon</a>
+      </div>
+      <div class="store-card">
+        <h3>🛍️ YesStyle</h3>
+        <p>Widest K-beauty selection. Ships worldwide. Frequent discount codes available. Most pharmacy items stocked here.</p>
+        <a href="https://www.yesstyle.com/en/beauty.html" class="btn btn-yesstyle" target="_blank" rel="nofollow">Shop YesStyle</a>
+      </div>
+      <div class="store-card">
+        <h3>🇰🇷 StyleKorean</h3>
+        <p>Direct from Korea. Authentic products at fair prices. Ships to US, Japan, and 50+ countries.</p>
+        <a href="https://www.stylekoreanglobal.com" class="btn btn-korean" target="_blank" rel="nofollow">Shop StyleKorean</a>
+      </div>
     </div>
-
-    <div class="product-card">
-      <h3>🛍️ YesStyle</h3>
-      <p>Best for: Widest K-beauty selection. Ships worldwide. Frequent discount codes. Most pharmacy products available here.</p>
-      <a href="https://www.yesstyle.com/en/beauty.html" class="btn btn-yesstyle" target="_blank" rel="nofollow">Shop YesStyle</a>
-    </div>
-
-    <div class="product-card">
-      <h3>🇰🇷 StyleKorean</h3>
-      <p>Best for: Direct from Korea. Authentic products, good prices. Ships to US, Japan, and 50+ countries.</p>
-      <a href="https://www.stylekoreanglobal.com" class="btn btn-korean" target="_blank" rel="nofollow">Shop StyleKorean</a>
-    </div>
-
   </div>
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Korean Pharmacy Acne Guide</p>
-  <p style="margin-top:8px;">This site participates in affiliate programs including Amazon Associates, YesStyle, and StyleKorean.<br>
-  As an Amazon Associate I earn from qualifying purchases.</p>
-  <p style="margin-top:8px;"><a href="mailto:owen@icbnet.co.kr">Contact</a></p>
+  <div class="footer-logo">GlowVault</div>
+  <p>Your trusted source for Korean skincare picks.</p>
+  <p style="margin-top:8px;">
+    <a href="https://www.reddit.com/user/GlowVaultKorea" target="_blank">Reddit</a> &nbsp;|&nbsp;
+    <a href="mailto:owen@icbnet.co.kr">Contact</a>
+  </p>
+  <p style="margin-top:12px; font-size:0.78em;">
+    This site participates in affiliate programs including Amazon Associates, YesStyle, and StyleKorean.<br>
+    As an Amazon Associate I earn from qualifying purchases. © 2026 GlowVault
+  </p>
 </footer>
 
 </body>
